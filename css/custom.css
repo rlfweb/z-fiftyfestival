@@ -1,0 +1,483 @@
+
+/* FONTS */
+
+/* @font-face allows us to embed custom fonts on our page */
+/* here we’re borrowing the code snippet from css-tricks 
+which provides modern (by still very wide) browser support */
+@font-face {
+    font-family: 'LunchType-Regular';
+    src: url('/fonts/lunchtype22-regular-webfont.woff2') format('woff2'),
+         url('/fonts/lunchtype22-regular-webfont.woff') format('woff'),
+         url('/fonts/lunchtype22-regular-webfont.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'LunchType-Medium';
+    src: url('/fonts/lunchtype24-medium-expanded-webfont.woff2') format('woff2'),
+         url('/fonts/lunchtype24-medium-expanded-webfont.woff') format('woff'),
+         url('/fonts/lunchtype24-medium-expanded-webfont.ttf') format('truetype');
+  }
+  
+  .marquee,
+  .lunch-medium,
+  .date,
+  .lineup h2,
+  .button,
+  .register h2,
+  .submit {
+    font-family: 'LunchType-Medium', sans-serif;
+  }
+
+
+
+  body {
+    font-family: "LunchType-Regular", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .section {
+    min-height: 100vh;
+    /* this enables flexbox (the modern layout mode in css) */
+    display: flex;
+  }
+  
+  /* here we have a little helper class that adds padding to our sections
+  that can be reused and just does one thing */
+  .section-pad {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  .container {
+    max-width: 810px;
+    /* this will center our box like magic! */
+    margin: auto;
+  }
+  
+  .intro {
+    background-color: #111;
+    background-image: url(intro.jpg);
+    color: #fff;
+  }
+  
+  .intro p {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  
+  .logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 112px;
+  }
+  
+  .logo img {
+    width: 100%;
+  }
+  
+  /* another helper/utility class */
+  .bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      transform: translate(0);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .appear {
+    /* here we set the opacity as a starting point*/
+    opacity: 0;
+    /* here we include the animation name */
+    animation-name: fadeIn;
+    /* set a duration and delay */
+    animation-duration: 3s;
+    animation-delay: 2s;
+    /* make sure the end state stays the same */
+    animation-fill-mode: forwards;
+  }
+  
+  .marquee {
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    width: 100%;
+    /* each letter will be 5% of the viewport width (vw) */
+    font-size: 5vw;
+    line-height: 1;
+    /* this will stop the long text from causing scroll bars by hanging
+    outside of the marquee box area */
+    overflow: hidden;
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2000vw);
+    }
+  }
+  
+  .marquee span {
+    /* this is the shorthand (brief) version of the animation css rule */
+    animation: moveLeft 250s infinite;
+    /* this will ensure the text stays all on the same line*/
+    white-space: nowrap;
+    /* our span is inline by default, so here we tell it to be block*/
+    display: block;
+    /* this will let us add our animation */
+    position: relative;
+  }
+  
+  .mix-difference {
+    /* our mix blend mode allows us to mix the current layer’s style/colors with that 
+    of what’s behind it to create some really cool effects */
+    mix-blend-mode: difference;
+  }
+  
+  .day-1 {
+    background-color: #fd76a7;
+  }
+  
+  .day-2 {
+    background-color: #1bb190;
+  }
+  
+  .day-3 {
+    background-image: url(day-3.jpg);
+  }
+  
+  .day {
+    /* so our shapes position in relation to our day sections */
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .day .container {
+    /* this will force our content to display on top of our shapes */
+    position: relative;
+    z-index: 2;
+  }
+  
+  .date {
+    font-size: 28px;
+    color: #ffeecf;
+    margin-bottom: 48px;
+    line-height: 1;
+  }
+  
+  .lineup h2 {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  
+  .lineup p {
+    font-size: 21px;
+  }
+  
+  .lineup li {
+    margin-bottom: 24px;
+  }
+  
+  .scroll-to {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+  
+    width: 64px;
+    height: 32px;
+  
+    background-image: url(down-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  
+    transform: translateX(-50%);
+  }
+  
+  .scroll-to-intro {
+    background-image: url(down-arrow-light.svg);
+  }
+  
+  @media (max-width: 640px) {
+    .marquee {
+      /* here we rest our marquee back to its default position */
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 90vw;
+      margin-bottom: 24px;
+    }
+  
+    .logo {
+      max-width: 64px;
+      margin-bottom: 24px;
+    }
+  
+    .intro p {
+      font-size: 20px;
+    }
+  
+    .scroll-to {
+      display: none;
+    }
+  
+    .lineup h2 {
+      font-size: 30px;
+    }
+  }
+  
+
+
+
+/* FOOTER STYLES */
+
+.flex-column {
+    flex-direction: column;
+  }
+  
+  .register {
+    min-height: 65vh;
+    display: flex;
+    background-color: #FFEED1;
+  }
+  
+  .footer {
+    min-height: 35vh;
+    display: flex;
+    background-color: #111118;
+    text-align: center;
+  }
+  
+  .footer img {
+    max-width: 87px;
+    margin-bottom: 24px;
+  }
+  
+  .button {
+    border: solid 2px #FFEED1;
+    color: #FFEED1;
+    line-height: 1;
+    padding: 6px 12px;
+    min-width: 120px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .register .container {
+    display: flex;
+  }
+  
+  .register h2 {
+    font-size: 40px;
+    margin-bottom: 48px;
+    line-height: 1.1;
+  }
+  
+  .sign-up {
+    display: flex;
+    border-bottom: solid 2px #00B290;
+    padding-bottom: 12px;
+  }
+  
+  input {
+    background: none;
+    border: none;
+    font-size: 21px;
+    outline: none;
+  }
+  
+  .email-input {
+      /* this will tell our input to stretch out and fill
+    the available space */
+    flex: 1;
+  }
+  
+  .form {
+    margin: 48px 24px;
+  }
+  
+  .eyes {
+    width: 108px;
+    height: 32px;
+    background-image: url(eyes_open.svg);
+  }
+  
+  .hand {
+    width: 57px;
+    height: 89px;
+    background-image: url(ok_hand.svg);
+      /* this aligns to hand to the bottom of its container */
+    align-self: flex-end;
+  }
+  
+  .eyes,
+  .hand {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  @media (max-width: 780px) {
+    
+    .register .container {
+          /* this will stack our boxes on top of each other*/
+      flex-direction: column;
+    }
+    
+    .register h2 {
+      font-size: 30px;
+    }
+    
+    .form {
+      margin: 24px 0;
+    }
+    
+  }
+  
+
+  /* SHAPES */
+  
+  .shape {
+    position: absolute;
+  }
+  
+  .circle {
+    height: 93px;
+    width: 93px;
+    background-color: #ffeecf;
+    border-radius: 100%;
+  }
+  
+  .squiggle {
+    width: 303px;
+    height: 63px;
+    background-image: url(squiggle.svg);
+      /* this will contain the background image inside the edges of our box */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .circle:nth-of-type(1) {
+    left: 5%;
+    top: 20%;
+  }
+  
+  .circle:nth-of-type(2) {
+    left: 20%;
+    top: 5%;
+  }
+  
+  .circle:nth-of-type(3) {
+    left: 20%;
+    top: 50%;
+  }
+  
+  .circle:nth-of-type(4) {
+    left: 4%;
+    top: 80%;
+  }
+  
+  .circle:nth-of-type(5) {
+    left: 70%;
+    top: 5%;
+  }
+  
+  .circle:nth-of-type(6) {
+    left: 75%;
+    top: 55%;
+  }
+  
+  .circle:nth-of-type(7) {
+    left: 85%;
+    top: 30%;
+  }
+  
+  .circle:nth-of-type(8) {
+    left: 80%;
+    top: 80%;
+  }
+  
+  .squiggle:nth-of-type(1) {
+    left: 5%;
+    top: 2%;
+  }
+  
+  .squiggle:nth-of-type(2) {
+    left: 8%;
+    top: 25%;
+  }
+  
+  .squiggle:nth-of-type(3) {
+    left: 3%;
+    top: 60%;
+  }
+  
+  .squiggle:nth-of-type(4) {
+    left: 10%;
+    top: 90%;
+  }
+  
+  .squiggle:nth-of-type(5) {
+    right: 10%;
+    top: 7%;
+  }
+  
+  .squiggle:nth-of-type(6) {
+    right: 2%;
+    top: 35%;
+  }
+  
+  .squiggle:nth-of-type(7) {
+    right: 9%;
+    top: 60%;
+  }
+  
+  .squiggle:nth-of-type(8) {
+    right: 0%;
+    bottom: 5%;
+  }
+
+  /* VIEWPORT */
+  
+  /* we are running our viewport transitions only on wider screens
+so that have more confidence they will run properly (as fade/scroll
+linked transitions on mobile can be patchy) */
+@media (min-width: 640px) {
+
+    .shape,
+    .lineup li,
+    .date {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .in-viewport .shape,
+    .in-viewport .lineup li,
+    .in-viewport .date {
+      opacity: 1;
+    }
+    
+  }
+  
+  
+  
+  
