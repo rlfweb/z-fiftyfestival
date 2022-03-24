@@ -57,7 +57,7 @@ which provides modern (by still very wide) browser support */
   
   .intro {
     background-color: #111;
-    background-image: url(intro.jpg);
+    background-image: url('../images/intro.jpg');
     color: #fff;
   }
   
@@ -159,7 +159,7 @@ which provides modern (by still very wide) browser support */
   }
   
   .day-3 {
-    background-image: url(day-3.jpg);
+    background-image:  url('../images/day-3.jpg');
   }
   
   .day {
@@ -204,7 +204,7 @@ which provides modern (by still very wide) browser support */
     width: 64px;
     height: 32px;
   
-    background-image: url(down-arrow.svg);
+    background-image: url('../images/down-arrow.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -213,7 +213,7 @@ which provides modern (by still very wide) browser support */
   }
   
   .scroll-to-intro {
-    background-image: url(down-arrow-light.svg);
+    background-image: url('../images/down-arrow-light.svg');
   }
   
   @media (max-width: 640px) {
@@ -317,13 +317,13 @@ which provides modern (by still very wide) browser support */
   .eyes {
     width: 108px;
     height: 32px;
-    background-image: url(eyes_open.svg);
+    background-image: url('../images/eyes_open.svg');
   }
   
   .hand {
     width: 57px;
     height: 89px;
-    background-image: url(ok_hand.svg);
+    background-image: url('../images/ok_hand.svg');
       /* this aligns to hand to the bottom of its container */
     align-self: flex-end;
   }
@@ -369,7 +369,7 @@ which provides modern (by still very wide) browser support */
   .squiggle {
     width: 303px;
     height: 63px;
-    background-image: url(squiggle.svg);
+    background-image: url('../images/squiggle.svg');
       /* this will contain the background image inside the edges of our box */
     background-size: contain;
     background-repeat: no-repeat;
