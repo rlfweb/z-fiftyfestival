@@ -23,7 +23,7 @@ get_header();
     <section class="intro section section-pad bg-cover" id="intro">
   <div class="copy container">
     <a class="logo appear">
-      <img src="logo.svg">
+	<img src="<?php bloginfo('template_directory');?>/images/logo.svg">
     </a>
     <div class="marquee mix-difference">
 			<!-- title in multiple repeating times using javascript -->
@@ -47,10 +47,44 @@ get_header();
       Friday Nov 10
     </h3>
     <ul class="lineup">
-    
-<!-- RLF - new wp query for friday lineup -->
+      <li>
+        <h2>
+          Natti Natasha
+        </h2>
+        <p>
+          Argentina
+        </p>
+      </li>
 
-
+      <li>
+        <h2>
+          Post Malone
+        </h2>
+        <p>
+          United States
+        </p>
+      </li>
+      <li>
+        <h2>
+          Shirley Setia
+        </h2>
+        <p>
+          New Zealand / India
+        </p>
+      </li>
+      <li>
+        <h2>
+          Axwell /\ Ingrosso
+        </h2>
+        <p>
+          Sweden
+        </p>
+      </li>
+      <li>
+        <p>
+          …and more TBA
+        </p>
+      </li>
     </ul>
   </div>
   <span class="shape circle"></span>
@@ -74,11 +108,43 @@ get_header();
       Saturday Nov 11
     </h3>
     <ul class="lineup">
-     
-	<!-- new wp query for Saturday lineup -->
-
-
-
+      <li>
+        <h2>
+          Kyary Pamyu Pamyu
+        </h2>
+        <p>
+          Japan
+        </p>
+      </li>
+      <li>
+        <h2>
+          Stella Mwangi
+        </h2>
+        <p>
+          Kenya / Norway
+        </p>
+      </li>
+      <li>
+        <h2>
+          Wizkid
+        </h2>
+        <p>
+          Nigeria
+        </p>
+      </li>
+      <li>
+        <h2>
+          Stormzy
+        </h2>
+        <p>
+          UK
+        </p>
+      </li>
+      <li>
+        <p>
+          …and more TBA
+        </p>
+      </li>
     </ul>
   </div>
   <span class="shape squiggle"></span>
