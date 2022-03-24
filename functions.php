@@ -138,8 +138,12 @@ add_action( 'widgets_init', 'fifty_festival_widgets_init' );
  * Enqueue scripts and styles.
  */
 function fifty_festival_scripts() {
+
 	wp_enqueue_style( 'fifty-festival-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'fifty-festival-style', 'rtl', 'replace' );
+
+	wp_enqueue_script( 'fifty-festival-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
 
 	// RLF - load base.css
 	wp_enqueue_style( 'fifty-festival-base',  get_template_directory_uri() . '/css/base.css');
@@ -147,19 +151,17 @@ function fifty_festival_scripts() {
 	// RLF - load custom.css
 	wp_enqueue_style( 'fifty-festival-custom',  get_template_directory_uri() . '/css/custom.css');
 
-	wp_enqueue_script( 'fifty-festival-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	// RLF - load in-view.js
+	wp_enqueue_script( 'fifty-festival-in-view', get_template_directory_uri() . '/js/in-view.min.js', array(), true );
+	
 	// RLF - load fifty.js
 	wp_enqueue_script( 'fifty-festival-fifty', get_template_directory_uri() . '/js/fifty.js', array('jquery'), '1.0.0', true );
 
 	// RLF - load anime.js
-	wp_enqueue_script( 'fifty-festival-anime', get_template_directory_uri() . '/js/anime.min.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'fifty-festival-anime', get_template_directory_uri() . '/js/anime.min.js', array(), true );
 
 	// RLF - load fifty-support.js
-	wp_enqueue_script( 'fifty-festival-fifty-support', get_template_directory_uri() . '/js/fifty-support.js', array('jquery'), '1.0.0', true );
-
-	// RLF - load in-view.js
-	wp_enqueue_script( 'fifty-festival-in-view', get_template_directory_uri() . '/js/in-view.min.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'fifty-festival-fiftysupport', get_template_directory_uri() . '/js/fiftysupport.js', array(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
