@@ -11,11 +11,8 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer footer section-pad">
-		<div class="site-info">
 
-
-    <section class="section flex-column" id="register">
+<section class="section flex-column" id="register">
   <div class="register section-pad">
     <div class="container">
       <div class="eyes"></div>
@@ -32,6 +29,7 @@
     </div>
 
   </div>
+  
   <footer class="footer section-pad">
     <div class="container">
       <img src="<?php bloginfo('template_directory');?>/images/logo.svg">
@@ -47,10 +45,7 @@
 </section>
 
 
-
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<?php wp_footer(); ?>
 </body>
 </html>
