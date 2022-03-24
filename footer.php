@@ -34,7 +34,7 @@
   </div>
   <footer class="footer section-pad">
     <div class="container">
-      <img src="<?php bloginfo('template_directory')?>/images/logo.svg">
+      <img src="<?php bloginfo('template_directory');?>/images/logo.svg">
       <p>
         <a class="js-scroll button" href="#intro">
           ↑ Back to top
