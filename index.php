@@ -17,38 +17,129 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+	<body>
+    <section class="intro section section-pad bg-cover" id="intro">
+  <div class="copy container">
+    <a class="logo appear">
+      <img src="logo.svg">
+    </a>
+    <div class="marquee mix-difference">
+			<!-- title in multiple repeating times using javascript -->
+      <span>FIFTY Music Festival — November 10–12, Desert Valley</span>
+    </div>
+    <div class="mix-difference appear">
+      <p>
+        Held in the beautiful San Bernadino, CA, the first annual FIFTY Music Festival is an unmissable event. Over the course of
+        3 days, we invite the rising stars in music from 50 different countries all over the world for a unique, cultural
+        extravaganza.
+      </p>
+    </div>
+  </div>
+  <a href="#day-1" class="js-scroll scroll-to scroll-to-intro"></a>
+</section>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+<section class="section section-pad day day-1" id="day-1">
+  <div class="container center">
+    <h3 class="date">
+      Friday Nov 10
+    </h3>
+    <ul class="lineup">
+    
+<!-- RLF - new wp query for friday lineup -->
 
-			the_posts_navigation();
 
-		else :
+    </ul>
+  </div>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
+  <span class="shape circle"></span>
 
-			get_template_part( 'template-parts/content', 'none' );
+  <a href="#day-2" class="js-scroll scroll-to"></a>
 
-		endif;
-		?>
+</section>
+
+
+
+<section class="section section-pad day day-2" id="day-2">
+  <div class="container center">
+    <h3 class="date">
+      Saturday Nov 11
+    </h3>
+    <ul class="lineup">
+     
+	<!-- new wp query for Saturday lineup -->
+
+
+
+    </ul>
+  </div>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <span class="shape squiggle"></span>
+  <a href="#day-3" class="js-scroll scroll-to"></a>
+
+</section>
+
+<section class="section section-pad day day-3 bg-cover" id="day-3">
+  <div class="container center">
+    <h3 class="date">
+      Sunday Nov 12
+    </h3>
+    <ul class="lineup">
+      <li>
+        <h2>
+          Swet Shop Boys
+        </h2>
+        <p>
+          UK / US
+        </p>
+      </li>
+      <li>
+        <h2>
+          Christine and the Queens
+        </h2>
+        <p>
+          France
+        </p>
+      </li>
+      <li>
+        <h2>
+          Ryan McGeady
+        </h2>
+        <p>
+          Scotland
+        </p>
+      </li>
+      <li>
+        <h2>
+          Die Antwoord
+        </h2>
+        <p>
+          South Africa
+        </p>
+      </li>
+      <li>
+        <p>
+          …and more TBA
+        </p>
+      </li>
+    </ul>
+  </div>
+  <a href="#register" class="js-scroll scroll-to"></a>
+</section>
 
 	</main><!-- #main -->
 
