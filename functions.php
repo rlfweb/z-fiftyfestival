@@ -152,6 +152,15 @@ function fifty_festival_scripts() {
 	// RLF - load fifty.js
 	wp_enqueue_script( 'fifty-festival-fifty', get_template_directory_uri() . '/js/fifty.js', array('jquery'), '1.0.0', true );
 
+	// RLF - load anime.js
+	wp_enqueue_script( 'fifty-festival-anime', get_template_directory_uri() . '/js/anime.min.js', array('jquery'), '1.0.0', true );
+
+	// RLF - load fifty-support.js
+	wp_enqueue_script( 'fifty-festival-fifty-support', get_template_directory_uri() . '/js/fifty-support.js', array('jquery'), '1.0.0', true );
+
+	// RLF - load in-view.js
+	wp_enqueue_script( 'fifty-festival-in-view', get_template_directory_uri() . '/js/in-view.min.js', array('jquery'), '1.0.0', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
