@@ -17,9 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-
-
-	<body>
+  <body>
     <section class="intro section section-pad bg-cover" id="intro">
   <div class="copy container">
     <a class="logo appear">
@@ -40,46 +38,54 @@ get_header();
   <a href="#day-1" class="js-scroll scroll-to scroll-to-intro"></a>
 </section>
 
-
 <section class="section section-pad day day-1" id="day-1">
   <div class="container center">
     <h3 class="date">
       Friday Nov 10
     </h3>
     <ul class="lineup">
-      <li>
-        <h2>
-          Natti Natasha
-        </h2>
-        <p>
-          Argentina
-        </p>
-      </li>
 
-      <li>
-        <h2>
-          Post Malone
-        </h2>
-        <p>
-          United States
-        </p>
-      </li>
-      <li>
-        <h2>
-          Shirley Setia
-        </h2>
-        <p>
-          New Zealand / India
-        </p>
-      </li>
-      <li>
-        <h2>
-          Axwell /\ Ingrosso
-        </h2>
-        <p>
-          Sweden
-        </p>
-      </li>
+    <?php
+  
+  $args = array(
+    'category_name' => 'friday'
+);
+    
+  // Custom query.
+  $query = new WP_Query( $args );
+    
+  // Check that we have query results.
+  if ( $query->have_posts() ) {
+    
+      // Start looping over the query results.
+      while ( $query->have_posts() ) {
+    
+          $query->the_post();
+    
+?>
+
+    <?php     
+          // Check rows exists.
+      if( have_rows('artists') ):
+      // Loop through rows.
+      while( have_rows('artists') ) : the_row(); 
+      ?>
+        <li>
+          <h2><?php the_sub_field('name'); ?></h2>
+          <p><?php the_sub_field('country'); ?></p>
+        </li>
+    <?php endwhile;
+    endif; ?>
+
+<?php
+}  
+  }
+    
+  // Restore original post data.
+  wp_reset_postdata();
+  ?>
+
+
       <li>
         <p>
           …and more TBA
@@ -108,38 +114,47 @@ get_header();
       Saturday Nov 11
     </h3>
     <ul class="lineup">
-      <li>
-        <h2>
-          Kyary Pamyu Pamyu
-        </h2>
-        <p>
-          Japan
-        </p>
-      </li>
-      <li>
-        <h2>
-          Stella Mwangi
-        </h2>
-        <p>
-          Kenya / Norway
-        </p>
-      </li>
-      <li>
-        <h2>
-          Wizkid
-        </h2>
-        <p>
-          Nigeria
-        </p>
-      </li>
-      <li>
-        <h2>
-          Stormzy
-        </h2>
-        <p>
-          UK
-        </p>
-      </li>
+
+    <?php
+  
+  $args = array(
+    'category_name' => 'saturday'
+);
+    
+  // Custom query.
+  $query = new WP_Query( $args );
+    
+  // Check that we have query results.
+  if ( $query->have_posts() ) {
+    
+      // Start looping over the query results.
+      while ( $query->have_posts() ) {
+    
+          $query->the_post();
+    
+?>
+
+    <?php     
+          // Check rows exists.
+      if( have_rows('artists') ):
+      // Loop through rows.
+      while( have_rows('artists') ) : the_row(); 
+      ?>
+        <li>
+          <h2><?php the_sub_field('name'); ?></h2>
+          <p><?php the_sub_field('country'); ?></p>
+        </li>
+    <?php endwhile;
+    endif; ?>
+
+<?php
+}  
+  }
+    
+  // Restore original post data.
+  wp_reset_postdata();
+  ?>
+
       <li>
         <p>
           …and more TBA
@@ -159,55 +174,68 @@ get_header();
 
 </section>
 
+
+
 <section class="section section-pad day day-3 bg-cover" id="day-3">
   <div class="container center">
     <h3 class="date">
       Sunday Nov 12
     </h3>
     <ul class="lineup">
+  
+
+    <?php
+  
+  $args = array(
+    'category_name' => 'sunday'
+);
+    
+  // Custom query.
+  $query = new WP_Query( $args );
+    
+  // Check that we have query results.
+  if ( $query->have_posts() ) {
+    
+      // Start looping over the query results.
+      while ( $query->have_posts() ) {
+    
+          $query->the_post();
+    
+?>
+
+    <?php     
+          // Check rows exists.
+      if( have_rows('artists') ):
+      // Loop through rows.
+      while( have_rows('artists') ) : the_row(); 
+      ?>
+        <li>
+          <h2><?php the_sub_field('name'); ?></h2>
+          <p><?php the_sub_field('country'); ?></p>
+        </li>
+    <?php endwhile;
+    endif; ?>
+
+<?php
+}  
+  }
+    
+  // Restore original post data.
+  wp_reset_postdata();
+  ?>
+
       <li>
-        <h2>
-          Swet Shop Boys
-        </h2>
         <p>
-          UK / US
+          … and more TBA
         </p>
       </li>
-      <li>
-        <h2>
-          Christine and the Queens
-        </h2>
-        <p>
-          France
-        </p>
-      </li>
-      <li>
-        <h2>
-          Ryan McGeady
-        </h2>
-        <p>
-          Scotland
-        </p>
-      </li>
-      <li>
-        <h2>
-          Die Antwoord
-        </h2>
-        <p>
-          South Africa
-        </p>
-      </li>
-      <li>
-        <p>
-          …and more TBA
-        </p>
-      </li>
+
     </ul>
   </div>
   <a href="#register" class="js-scroll scroll-to"></a>
 </section>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 
